@@ -165,7 +165,7 @@ angular.module('utils.services', [])
               dataset: mid,
               label: mid,
               key: "hs",
-              color: "#ff6600",
+              color: "rgb(0,50,150)",
               type: ['line', 'area'],
               interpolation: { mode: "basis"},
               defined: function (value){
