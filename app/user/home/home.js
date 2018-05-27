@@ -35,7 +35,7 @@ app.controller('HomeCtrl', function($scope, $route, dataService, timerService) {
 						 "dataset":"global",
 						 "label":"Total Pool Hashrate",
 						 "key":"hs",
-						 "color":"red",
+						 "color":"rgb(0,50,150)",
 						 "type":["line","area"]}
                     ],
                     allSeries: [],
@@ -43,7 +43,10 @@ app.controller('HomeCtrl', function($scope, $route, dataService, timerService) {
                         x: {
                             key: "ts",
                             type: "date"
-                        }
+                        },
+	               y: {
+            		  min: 0
+                    	}  
                     }
                 }
             }
@@ -90,14 +93,17 @@ app.controller('HomeCtrl', function($scope, $route, dataService, timerService) {
                 datasets: { global: data },
                 options: {
                     series: [
-                        {"axis":"y","id":"global","dataset":"global","label":"Total Pool Miners","key":"cn","color":"green","type":["line","area"]}
+                        {"axis":"y","id":"global","dataset":"global","label":"Total Pool Miners","key":"cn","color":"rgb(0,50,150)","type":["line","area"]}
                     ],
                     allSeries: [],
                     axes: {
                         x: {
                             key: "ts",
                             type: "date"
-                        }
+                        },
+	               y: {
+            		  min: 0
+                    	}  
                     }
                 }
             }
