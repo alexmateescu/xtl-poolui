@@ -9,6 +9,19 @@ app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibi
 		});
 	}
 
+	$scope.profitCalc = {
+	    hashrate: '1000',
+	    multi: 'H/S'
+/*	    $scope.profitCalc.multi = 'H/S'
+        if ($scope.profitCalc.multi = 'H/S') {
+        return $scope.profitCalc.hashrate
+        } else if ($scope.profitCalc.multi = 'KH/S') {
+        return ($scope.profitCalc.hashrate * 1000)
+        } else if ($scope.profitCalc.multi = 'MH/S') {
+        return ($scope.profitCalc.hashrate * 1000000)
+        }
+*/	};
+
 	// Update miners everyime addrStats
 	$scope.$parent.$watch('addrStats', function(newValue, oldValue) {
 		$scope.updateCharts();

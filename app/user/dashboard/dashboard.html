@@ -1,6 +1,6 @@
 <ng-include src="'user/dashboard/poolstats.html'"></ng-include>
 <div layout="column" layout-lg="row" layout-gt-lg="row" flex>
-	<div layout="column" flex-lg="30" flex-gt-lg="30">
+	<div layout="column" flex-lg="25" flex-gt-lg="25">
 		<md-card>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools">
@@ -37,7 +37,7 @@
 			</md-card-content>
 		</md-card>
 	</div>
-	<div layout="column" flex-lg="70" flex-gt-lg="70">
+	<div layout="column" flex-lg="60" flex-gt-lg="60">
 		<md-card>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools">
@@ -67,7 +67,7 @@
 										<p class="text-right">{{poolStats[pooltype].pool_statistics.lastBlockFound | number}}</p>
 									</md-list-item>
 									<md-list-item>
-													<p> Block Reward </p>
+										<p> Block Reward </p>
 										<p class="text-right">{{lastBlock[pooltype].value | toXMR | number}} {{GLOBALS.coin_abbr}}</p>
 									</md-list-item>
 									<md-list-item>
@@ -97,8 +97,7 @@
 									</md-list-item>
 									<md-list-item>
 										<p> Round Hashes </p>
-										<p class="text-right">{{poolStats[pooltype].pool_statistics.roundHashes |
-											number}}</p>
+										<p class="text-right">{{poolStats[pooltype].pool_statistics.roundHashes | number}}</p>
 									</md-list-item>
 									<md-list-item>
 										<p> Block Every </p>
@@ -136,7 +135,59 @@
 			</md-card-content>
 		</md-card>
 	</div>
+	<div layout="column" flex-lg="15" flex-gt-lg="15">
+		<md-card flex>
+			<md-toolbar class="md-table-toolbar md-default">
+				<div class="md-toolbar-tools">
+					<span class="md-title">Est. Mining Profits</span>
+				</div>
+			</md-toolbar>
+			<md-card-content>
+				<div layout="column" flex>
+					<md-input-container flex class="md-block md-title">
+						<label>Hashrate</label>
+						<input type="number" placeholder="1000" ng-model="profitCalc.hashrate">
+					</md-input-container>
+					<md-input-container flex class="md-block md-title">
+						<md-select placeholder="H/S" name="multi" ng-model="profitCalc.multi">
+							<md-option value="1" ng-selected="true">H/S</md-option>
+							<md-option value="1000">KH/S</md-option>
+							<md-option value="1000000">MH/S</md-option>
+						</md-select>
+					</md-input-container>
+					<h2 ng-if="profitCalc">{{ (((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 720 * (network.value | toXMR)) | number }} {{GLOBALS.coin_abbr}} per day</h2>
+				</div>
+			</md-card-content>
+		</md-card>
+	</div>
 </div>
+<!--
+<div layout="row" flex>
+	<md-card flex>
+		<md-toolbar class="md-table-toolbar md-default">
+			<div class="md-toolbar-tools">
+				<span class="md-title">Estimate Mining Profits</span>
+			</div>
+		</md-toolbar>
+		<md-card-content>
+			<div layout="row" flex>
+				<md-input-container flex class="md-block md-title">
+					<label>Hashrate</label>
+					<input type="number" name="hashrate" ng-model="profitCalc.hashrate">
+				</md-input-container>
+				<md-input-container flex="10" class="md-block md-title">
+					<md-select placeholder="H/S" name="multi" ng-model="profitCalc.multi">
+						<md-option value="1" ng-selected="true">H/S</md-option>
+						<md-option value="1000">KH/S</md-option>
+						<md-option value="1000000">MH/S</md-option>
+					</md-select>
+				</md-input-container>
+				<h2 ng-if="profitCalc" class="text right">{{ (((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 720 * (network.value | toXMR)) | number }} {{GLOBALS.coin_abbr}} per day</h2>
+			</div>
+		</md-card-content>
+	</md-card>
+</div>
+-->
 
 <form layout layout-align="center" layout-padding>
 	<div layout="row" flex>
