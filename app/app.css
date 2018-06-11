@@ -57,6 +57,10 @@ md-sidenav {
         min-width: 220px;
 }
 
+.sidenav md-list {
+    padding-bottom: 0px;
+}
+
 md-toolbar {
         background-color: rgb(0, 60, 160) !important;
         font-size: 14px;
@@ -136,8 +140,7 @@ md-tooltip .md-content {
   margin: 0px;
 }
 
-.sidenav md-menu {
-  padding: 0px;
+.sidenav button {
   width: 100%;
   text-align: left;
   color: #fff;
@@ -204,6 +207,14 @@ md-menu-content {
 .welcome h3 {
         padding-bottom: 0;
         margin-bottom: 0;
+}
+
+.profit md-input-container {
+    margin-bottom: 5px;
+}
+
+.profit h3 {
+    margin: 10px;
 }
 
 .text-left {

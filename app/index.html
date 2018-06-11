@@ -33,8 +33,8 @@
       <div class="container" layout="row" flex>
         <md-sidenav md-is-locked-open="menuOpen" md-component-id="left" md-whiteframe="4" class="sidenav">
           <md-toolbar class="logo">
-                        <span class="md-toolbar-tools" style="text-align: center; position: ">
-                                <img src="/assets/MCgray.png"width = "55" height = "55"><strong>MinerCartel</strong>
+                        <span class="md-toolbar-tools" style="text-align: center">
+                                <img src="/assets/MCgray.png"width = "55" height = "55" style="margin-right: 10px"><strong>MinerCartel</strong>
                             <!--                    <strong>{{GLOBALS.pool_name}}</strong> -->
                         </span>
           </md-toolbar>
@@ -87,36 +87,45 @@
                 Getting Started
               </md-button>
             </md-list-item>
-              <md-list-item>
-                  <md-menu>
-                      <md-button>
-                          <md-icon md-font-set="material-icons" class="menu-item">pool</md-icon>
-                          Pools
-                      </md-button>
-                        <md-menu-content width="3">
-                            <md-menu-item>
-                                <md-button href="http://turtle.minercartel.com" target="_blank">
-                                    TurtleCoin
-                                </md-button>
-                            </md-menu-item>
-                            <md-menu-item>
-                                <md-button href="http://tube.minercartel.com" target="_blank">
-                                    BitTube
-                                </md-button>
-                            </md-menu-item>
-                            <md-menu-item>
-                                <md-button href="http://ombre.minercartel.com" target="_blank">
-                                    Ombre
-                                </md-button>
-                            </md-menu-item>
-                            <md-menu-item>
-                                <md-button href="http://wownero.minercartel.com" target="_blank">
-                                    Wownero
-                                </md-button>
-                            </md-menu-item>
-                        </md-menu-content>
-                  </md-menu>
-              </md-list-item>
+          </md-list>
+            <md-menu>
+                <md-button ng-click="$mdMenu.open($event)">
+                    <md-icon md-font-set="material-icons" class="menu-item">pool</md-icon>
+                    Pools
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item>
+                        <md-button href="http://haven.minercartel.com" target="_blank">
+                            Haven
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button href="http://saronite.minercartel.com" target="_blank">
+                            Saronite
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button href="http://turtle.minercartel.com" target="_blank">
+                            TurtleCoin
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button href="http://tube.minercartel.com" target="_blank">
+                            BitTube
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button href="http://ombre.minercartel.com" target="_blank">
+                            Ombre
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button href="http://wownero.minercartel.com" target="_blank">
+                            Wownero
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
               <!--              <md-list-item>
                                          <md-button href="#/help/config_generator" ng-class="isActivePage('help/config_generator')">
                                                  <md-icon md-font-set="material-icons" class="menu-item">brush</md-icon>
@@ -129,10 +138,10 @@
                 FAQ
               </md-button>
             </md-list-item>-->
-              <md-list-item>
-                  <img src = "/assets/MCtextgray.png" width = "200" height = "200"/>
-              </md-list-item>
-          </md-list>
+            <br>
+            <div class="text-center">
+                  <img src = "/assets/MCtextgray.png" width = "200" height = "200">
+            </div>
         </md-sidenav>
 
         <md-content flex id="main">

@@ -1,4 +1,4 @@
-<ng-include src="'user/dashboard/poolstats.html'"></ng-include>
+<ng-include src="'user/dashboard/poolstats.html'" xmlns="http://www.w3.org/1999/html"></ng-include>
 <div layout="column" layout-lg="row" layout-gt-lg="row" flex>
 	<div layout="column" flex-lg="25" flex-gt-lg="25">
 		<md-card>
@@ -37,7 +37,7 @@
 			</md-card-content>
 		</md-card>
 	</div>
-	<div layout="column" flex-lg="60" flex-gt-lg="60">
+	<div layout="column" flex-lg="55" flex-gt-lg="55">
 		<md-card>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools">
@@ -135,27 +135,40 @@
 			</md-card-content>
 		</md-card>
 	</div>
-	<div layout="column" flex-lg="15" flex-gt-lg="15">
+	<div layout="column" flex-lg="20" flex-gt-lg="20" class="profit">
 		<md-card flex>
 			<md-toolbar class="md-table-toolbar md-default">
 				<div class="md-toolbar-tools">
-					<span class="md-title">Est. Mining Profits</span>
+					<span class="md-title">Markets and Profits</span>
 				</div>
 			</md-toolbar>
 			<md-card-content>
-				<div layout="column" flex>
+				<div layout="column" flex ng-controller="marketstats">
+					<h3>{{GLOBALS.coin_abbr}}: {{COINprice}} BTC</br>
+					BTC: {{BTCprice}} USD</h3></br>
+					<div layout="row">
 					<md-input-container flex class="md-block md-title">
 						<label>Hashrate</label>
 						<input type="number" placeholder="1000" ng-model="profitCalc.hashrate">
 					</md-input-container>
-					<md-input-container flex class="md-block md-title">
+					<md-input-container style="max-width: 100px">
 						<md-select placeholder="H/S" name="multi" ng-model="profitCalc.multi">
 							<md-option value="1" ng-selected="true">H/S</md-option>
 							<md-option value="1000">KH/S</md-option>
 							<md-option value="1000000">MH/S</md-option>
 						</md-select>
 					</md-input-container>
-					<h2 ng-if="profitCalc">{{ (((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 720 * (network.value | toXMR)) | number }} {{GLOBALS.coin_abbr}} per day</h2>
+					</div>
+					<div>
+					<h3 ng-if="profitCalc" align="right">{{ (((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 720 * ((network.value | toXMR) )) | number }} {{GLOBALS.coin_abbr}} per day</br>
+					{{ ((((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 720 * ((network.value | toXMR) )) * COINprice).toFixed(6) }} BTC per day</br>
+					{{ ((((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 720 * ((network.value | toXMR) )) * COINprice * BTCprice).toFixed(2) }} USD per day</h3>
+					<md-tooltip>
+						Estimation only - can change over time
+					</md-tooltip>
+				<!--	<p>{{COINprice}}</p> -->
+					</div>
+					<p align="center">Exchange at: <a href="https://tradeogre.com/exchange/BTC-{{GLOBALS.coin_abbr}}" target="_blank">TradeOgre</a>, <a href="https://altex.exchange/markets&pair=BTC_{{GLOBALS.coin_abbr}}" target="_blank">Altex.exchange</a></p>
 				</div>
 			</md-card-content>
 		</md-card>

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibility, dataService, timerService, addressService, minerService) {
+app.controller('DashboardCtrl', function($scope , $http, $route, $mdDialog, $pageVisibility, dataService, timerService, addressService, minerService) {
 	$scope.minerStats = {};
 	
 	$scope.updateCharts = function (){
@@ -21,6 +21,25 @@ app.controller('DashboardCtrl', function($scope , $route, $mdDialog, $pageVisibi
         return ($scope.profitCalc.hashrate * 1000000)
         }
 */	};
+
+    $scope.marketstats = function () {
+        $http({
+            method : "GET",
+            url : "https://tradeogre.com/api/v1/ticker/BTC-XHV"
+        }).then(function mySuccess(response) {
+            $scope.COINprice = response.data.price;
+        }, function myError(response) {
+            $scope.COINprice = response.statusText;
+        });
+        $http({
+            method : "GET",
+            url : "https://api.coinmarketcap.com/v2/ticker/1/"
+        }).then(function mySuccess(response) {
+            $scope.BTCprice = response.data.data.quotes.USD.price;
+        }, function myError(response) {
+            $scope.BTCprice = response.statusText;
+        });
+    };
 
 	// Update miners everyime addrStats
 	$scope.$parent.$watch('addrStats', function(newValue, oldValue) {
