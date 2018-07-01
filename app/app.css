@@ -75,7 +75,7 @@ md-toolbar {
 }
 
 #main {
-  background: #787878;
+  background: rgb(240, 240, 240); 
 }
 
 .maintoolbar {
