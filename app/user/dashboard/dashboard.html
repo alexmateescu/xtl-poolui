@@ -144,7 +144,7 @@
 			</md-toolbar>
 			<md-card-content>
 				<div layout="column" flex ng-controller="marketstats">
-					<h3>{{GLOBALS.coin_abbr}}: {{COINprice}} BTC</br>
+					<h3>{{GLOBALS.coin_abbr}}: {{COINprice.toFixed(8)}} BTC</br>
 					BTC: {{BTCprice}} USD</h3></br>
 					<div layout="row">
 					<md-input-container flex class="md-block md-title">
@@ -160,15 +160,15 @@
 					</md-input-container>
 					</div>
 					<div>
-					<h3 ng-if="profitCalc" align="right">{{ (((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 720 * ((network.value | toXMR) )) | number }} {{GLOBALS.coin_abbr}} per day</br>
-					{{ ((((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 720 * ((network.value | toXMR) )) * COINprice).toFixed(6) }} BTC per day</br>
-					{{ ((((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 720 * ((network.value | toXMR) )) * COINprice * BTCprice).toFixed(2) }} USD per day</h3>
+					<h3 ng-if="profitCalc" align="right">{{ (((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 1440 * ((network.value | toXMR) )) | number }} {{GLOBALS.coin_abbr}} per day</br>
+					{{ ((((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 1440 * ((network.value | toXMR) )) * COINprice).toFixed(6) }} BTC per day</br>
+					{{ ((((profitCalc.hashrate * profitCalc.multi) / (network.difficulty | difficultyToHashRate)) * 1440 * ((network.value | toXMR) )) * COINprice * BTCprice).toFixed(2) }} USD per day</h3>
 					<md-tooltip>
 						Estimation only - can change over time
 					</md-tooltip>
 				<!--	<p>{{COINprice}}</p> -->
 					</div>
-					<p align="center">Exchange at: <a href="https://tradeogre.com/exchange/BTC-{{GLOBALS.coin_abbr}}" target="_blank">TradeOgre</a>, <a href="https://altex.exchange/markets&pair=BTC_{{GLOBALS.coin_abbr}}" target="_blank">Altex.exchange</a></p>
+					<p align="center">Exchange at: <a href="https://tradeogre.com/exchange/BTC-{{GLOBALS.coin_abbr}}" target="_blank">TradeOgre</a>, <a href="https://crex24.com/exchange/{{GLOBALS.coin_abbr}}-BTC" target="_blank">Crex24</a></p>
 				</div>
 			</md-card-content>
 		</md-card>

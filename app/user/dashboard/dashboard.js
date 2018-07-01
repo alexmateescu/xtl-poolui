@@ -25,17 +25,17 @@ app.controller('DashboardCtrl', function($scope , $http, $route, $mdDialog, $pag
     $scope.marketstats = function () {
         $http({
             method : "GET",
-            url : "https://tradeogre.com/api/v1/ticker/BTC-XHV"
+            url : "https://api.crex24.com/CryptoExchangeService/BotPublic/ReturnTicker?request=[NamePairs=BTC_XTL]"
         }).then(function mySuccess(response) {
-            $scope.COINprice = response.data.price;
+            $scope.COINprice = response.data.Tickers[0].Last;
         }, function myError(response) {
             $scope.COINprice = response.statusText;
         });
         $http({
             method : "GET",
-            url : "https://api.coinmarketcap.com/v2/ticker/1/"
+            url : "https://api.crex24.com/CryptoExchangeService/BotPublic/ReturnTicker?request=[NamePairs=USD_BTC]"
         }).then(function mySuccess(response) {
-            $scope.BTCprice = response.data.data.quotes.USD.price;
+            $scope.BTCprice = response.data.Tickers[0].Last;
         }, function myError(response) {
             $scope.BTCprice = response.statusText;
         });
