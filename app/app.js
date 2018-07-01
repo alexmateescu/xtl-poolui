@@ -94,7 +94,7 @@ var app = angular.module('poolui', [
 
 		// Hashrate Alarm
 		$scope.globalSiren = false;
-		$scope.sirenAudio = ngAudio.load("assets/ding.wav");
+		$scope.sirenAudio = ngAudio.load("");
 		
 		// Update global hashrate and set off alarm if any of the tracked addresses fall below the threshold
 		var updateHashRate = function (addrStats){

@@ -1,41 +1,37 @@
 <md-card-content>
-	<div class="md-headline">Welcome to {{GLOBALS.pool_name}}</div>
-	<!--    <h3>Update welcome content in app/welcome.html</h3> -->
+	<div>
+		<div class="md-headline nowrap"><strong>Welcome to <span style="font-size: 80%"> stellite.</span><span style="font-size: 100%">almsoft</span><span style="font-size: 80%">.net </span></strong>
+		</div>
+		<div class="md-subhead nowrap">Your new home for Stellite mining!<br><br>
+		</div>
+	</div>
 	<div class="welcome">
-		<h3>Welcome to The MinerCartel.</h3>
-		<p>"Just when I thought I was out, they pull me back in."</p>
-		<!--            <p>Started by Bathmat as a fun project to learn more about cryptocurrency, we are continuing to add features everyday.</p>
-                        <p>We have some big ambitions, so don't wait to join us!</p>
-                        <p>You can usually find Bathmat in a few irc channels, including #monero-pools, or send him an email: <a href="mailto: support@minercartel.com">MinerCartel</a></p>
-        -->                <p>For offers you can't refuse: <a href="https://discord.gg/62mYT5u" target="_blank">Discord</a></p>
-		<h3>Pool Features:</h3>
-		<p>Low fees</p>
-		<p>Low min payouts</p>
-		<p>Supports regular wallet addresses, payment ID, and integrated addresses</p>
-		<p>Individual worker stats</p>
-		<p>Email if worker(s) stop</p>
-		<p>PPLNS payment system (rewards loyal miners)</p>
-<!--		<h3>xmr-node-proxy</h3>
-		<p>This pool supports XNP; however, use this version: <a href="https://github.com/bobbieltd/xmr-node-proxy" target="_blank">xmr-node-proxy</a> Please note, this is not fully tested. Contact Bathmat if you need assistance with XNP.</p>
--->		<!--            <p>This pool supports XNP; however, to use with Forknote coins, use this version: <a href="https://github.com/Bathmat/forknote-node-proxy" target="_blank">forknote-node-proxy</a></p> -->
-		<!--            <p>If you are using Bathmat's FNP, set "coin": "xmr" in config.json to match the pool's utils.</p> -->
-		<h3>More Cartels:</h3>
-		<!--            <p><a href="http://leviar.bathmatminingpools.com" target="_blank">Bathmat's Leviarcoin Pool</a></p> -->
-		<p><a href="http://turtle.minercartel.com" target="_blank">TurtleCoin Pool</a></p>
-		<!--                <p><a href="http://stellite.bathmatminingpools.com" target="_blank">Bathmat's Stellite Pool</a></p> -->
-		<p><a href="http://tube.minercartel.com" target="_blank">BitTube Pool</a></p>
-		<!--            <p><a href="http://recoal.bathmatminingpools.com" target="_blank">ReCoal Pool</a></p> -->
-		<p><a href="http://ombre.minercartel.com" target="_blank">Ombre Pool</a></p>
-		<p><a href="http://wownero.minercartel.com" target="_blank">Wownero Pool - Such WoW!</a></p>
-		<!--                <p><a href="http://sumokoin.bathmatminingpools.com" target="_blank">Bathmat's Sumokoin Pool</a></p>-->
+		<h3>Pool is now xmr-node-proxy ready!</h3>
+			<p>If you are managing more than 10 miners, check out <a href="https://github.com/Snipa22/xmr-node-proxy">xmr-node-proxy</a>, a proxy specifically designed for our pool software. It will allow you to manage and direct your workers in an efficient manner.<br>
+			The proxy will provide several improvements over currently available solutions like atrides proxy or HAproxy deployments. Biggest improvement will be without a doubt the ability to split the requested work to individual miners. That means unlike other solutions, it will appear to the pool as a single miner requesting work at normal rate, but at the cumulative difficulty the miners connected to the backend are capable of. This not only potentially reduces the load on the pool servers dramatically, but also allows for more efficient mining. First tests have shown a dramatic increase of hashrate especially with low hashrate miners.
+			</p>
+			<ul>
+                                <li>auto-reconnect</li>
+                                <li>block-height monitoring</li>
+                                <li>commandline status information</li>
+                                <li>automated pool failover</li>
+                                <li>customizable, automatic pool load/share balancing</li>
+                        </ul>
 	</div>
-	<h3>Market Stats</h3>
-	<div layout="column" layout-gt-md="row" flex>
-		<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-		<div class="coinmarketcap-currency-widget" data-currency="haven" data-base="BTC" data-secondary="USD" data-ticker="false" data-rank="false" data-marketcap="false" data-volume="false" data-stats="BTC" data-statsticker="false"></div>
-	</div>
-	<div layout="column" layout-gt-md="row" flex>
-		<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-		<div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" data-ticker="false" data-rank="false" data-marketcap="false" data-volume="false" data-stats="USD" data-statsticker="false"></div>
-	</div>
+		<br>
+		<h4>Pool Features</h4>
+			<ul>
+				<li>PaymentID payments for Exchanges</li>
+				<li>PPLNS mining systems</li>
+				<li>Patched for the 127 transaction bug</li>
+				<li>Well-documented <a href="https://cryptonote-pool-api.restlet.io/">API</a> with active development efforts</li>
+				<li>Set your own payment thresholds for normal wallets + exchanges!</li>
+				<li>Per-Worker hashrate charts</li>
+				<li>Payments every 2 hours</li>
+				<li>E-mail notification of miners down</li>
+			</ul>
+		<h4>Upcoming Features</h4>
+			<ul>
+			</ul>
 </md-card-content>
+

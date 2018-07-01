@@ -4,13 +4,19 @@
 <!--[if IE 8]>         <html lang="en" ng-app="poolui" class="no-js lt-ie9" manifest="app.manifest"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="poolui" class="no-js" manifest="app.manifest"> <!--<![endif]-->
 <head>
-    <title>MinerCartel</title>
+  <title>stellite.almsoft.net - Stellite Mining Pool</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <meta name="description" content="Welcome to The MinerCartel. As far back as I can remember, I always wanted to be a gangster.">
-  <meta name="keywords" content="cryptonote, mining, pool, pplns, block, payments, payouts, reward, hash, hashrate, xmr-stak">
-  <meta name="google-site-verification" content="8fsduyK9_KF2zKQiMQL7i8Fp_JkyR8MTFqcBtT52QtI">
+  <meta name="description" content="Welcome to stellite.almsoft.net! Your new home for Stellite (XTL) mining.A cryptocurrency aiming to use blockchain technologies to globally redistribute wealth">
+  <link rel="canonical" href="http://stellite.almsoft.net">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="stellite.almsoft.net">
+  <meta property="og:site_name">
+  <meta property="og:description" content="Stellite (XTL) A cryptocurrency aiming to use blockchain technologies to globally redistribute wealth.">
+  <meta property="og:url" content="http://stellite.almsoft.net/index.html">
+  <meta property="og:image" content="https://stellite.almsoft.net/header-icon-b.png">
+
   <!-- CSS -->
   <link rel="stylesheet" href="vendor/angular-material/angular-material.css">
   <link rel="stylesheet" href="vendor/n3-charts/build/LineChart.css">
@@ -19,10 +25,19 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-  <!-- Favicon -->
- <link href="" type="image/png" rel="icon">
-  <!-- CHAT -->
+  <!-- CSS -->
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/assets/apple-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/header-icon-b.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-80205535-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-80205535-2');
+</script>
 
 </head>
 <body ng-cloak layout="column" ng-controller="AppCtrl">
@@ -33,10 +48,12 @@
       <div class="container" layout="row" flex>
         <md-sidenav md-is-locked-open="menuOpen" md-component-id="left" md-whiteframe="4" class="sidenav">
           <md-toolbar class="logo">
-                        <span class="md-toolbar-tools" style="text-align: center">
-                                <img src="/assets/MCgray.png"width = "55" height = "55" style="margin-right: 10px"><strong>MinerCartel</strong>
-                            <!--                    <strong>{{GLOBALS.pool_name}}</strong> -->
-                        </span>
+            <!-- <h1 class="md-toolbar-tools">stellite.almsoft.net - Stellite (XTL) pool</h1> -->
+	<span class="md-toolbar-tools header-logo-wrapper">
+        <img class="header-logo" src="assets/header-icon-b.png" alt="logo">
+	     <strong><span>&nbsp stellite</span><span style="font-size: 60%; color: rgb(160, 218, 255); vertical-align: -23%;">.almsoft</span><span style="vertical-align: -31%;">.net</span></strong>
+	     <br> 
+	</span>
           </md-toolbar>
           <md-list>
             <md-list-item>
@@ -87,61 +104,33 @@
                 Getting Started
               </md-button>
             </md-list-item>
+	    <md-list-item>
+		    <md-button href="">
+		    <md-icon md-font-set="material-icons" class="menu-item ng-scope material-icons" role="img" aria-label="language">language</md-icon>
+		    Other Pools
+		</md-list-item>
+		<md-list-item>		
+                    <md-button href="https://xao.almsoft.net" target="blank">
+			<img class="menu-item material-icons" style="width: 60px!important; margin: 6px!important;" src="assets/alloy-logo.png" alt="alloy(XAO)">    
+			Alloy (XAO)
+                    </md-button>
+                </md-list-item> 
           </md-list>
-            <md-menu>
-                <md-button ng-click="$mdMenu.open($event)">
-                    <md-icon md-font-set="material-icons" class="menu-item">pool</md-icon>
-                    Pools
-                </md-button>
-                <md-menu-content width="3">
-                    <md-menu-item>
-                        <md-button href="http://haven.minercartel.com" target="_blank">
-                            Haven
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button href="http://saronite.minercartel.com" target="_blank">
-                            Saronite
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button href="http://turtle.minercartel.com" target="_blank">
-                            TurtleCoin
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button href="http://tube.minercartel.com" target="_blank">
-                            BitTube
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button href="http://ombre.minercartel.com" target="_blank">
-                            Ombre
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button href="http://wownero.minercartel.com" target="_blank">
-                            Wownero
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
-              <!--              <md-list-item>
-                                         <md-button href="#/help/config_generator" ng-class="isActivePage('help/config_generator')">
-                                                 <md-icon md-font-set="material-icons" class="menu-item">brush</md-icon>
-                                                 Config generator
-                                               </md-button>
-                                             </md-list-item> -->
-    <!--        <md-list-item>
-              <md-button href="#/help/faq" ng-class="isActivePage('help/faq')">
-                <md-icon md-font-set="material-icons" class="menu-item">help_outline</md-icon>
-                FAQ
-              </md-button>
-            </md-list-item>-->
-            <br>
-            <div class="text-center">
-                  <img src = "/assets/MCtextgray.png" width = "200" height = "200">
+          <div flex></div>
+	<md-list>
+		<md-list-item>
+                        <md-button href="https://www.facebook.com/stellitecash" class="fa fa-3x fa-facebook-square"></md-button>
+                        <md-button href="https://github.com/stellitecoin" class="fa fa-3x fa-github-square"></md-button>
+                        <md-button href="https://twitter.com/stellitecash" class="fa fa-3x fa-twitter-square"></md-button>
+                </md-list-item>
+	</md-list>
+          <div class="power text-center md-subhead"  layout="row" layout-align="center end"> 
+            <div flex>
+            Powered by <a href="https://github.com/alexmateescu/nodejs-pool" target="_new" title="nodejs-pool">nodejs-pool</a> & <a class="alt" href="https://github.com/alexmateescu/poolui" target="_new" title="poolui">poolui</a>
+            <br/>
+            MIT Licence 
             </div>
+          </div>
         </md-sidenav>
 
         <md-content flex id="main">
@@ -165,9 +154,6 @@
             </div>
           </md-toolbar>
           <div id="content" ng-view flex></div>
-		<div class="footer">
-		powered by <strong><a href="https://github.com/Snipa22/nodejs-pool"><i class="fa fa-github"></i> nodejs-pool</a></strong> &amp; <strong><a href="https://github.com/mesh0000/poolui"><i class="fa fa-github"></i> poolui</a></strong></br> <span style="font-size: 90%">(mod by <b>Bathmat</b>)</span>
-		</div>
         </md-content>
       </div>
       <!-- Scripts -->
