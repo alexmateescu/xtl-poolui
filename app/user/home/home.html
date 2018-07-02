@@ -61,6 +61,7 @@
                                                                 Pool Devs Donation:{{config.pool_dev_donation/100*config.pplns_fee | number:3 }}%
                                                         </md-tooltip>
                                                 </span>
+												<div class="md-secondary-container"></div>
 					</md-list-item>
 					<!--<md-list-item>
                             <p>Solo Fee</p>
@@ -79,30 +80,37 @@
 					<md-list-item>
 						<p>Minimum payout (wallet)</p>
 						<p class="text-right">{{config.min_wallet_payout | toXMR}} {{GLOBALS.coin_abbr}}</p>
+						<div class="md-secondary-container"></div>
 					</md-list-item>
 					<!--<md-list-item>
                             <p>Minimum payout (BTC)</p>
                             <p class="text-right">{{config.min_btc_payout | toXMR}} {{GLOBALS.coin_abbr}}</p>
+							<div class="md-secondary-container"></div>
                     </md-list-item>-->
 					<md-list-item>
 						<p>Minimum payout (exchange)</p>
 						<p class="text-right">{{config.min_exchange_payout | toXMR}} {{GLOBALS.coin_abbr}}</p>
+						<div class="md-secondary-container"></div>
 					</md-list-item>
 					<md-list-item>
 						<p>Payout interval</p>
-						<p class="text-right">60 minutes</p>
+						<p class="text-right">10 minutes</p>
+						<div class="md-secondary-container"></div>
 					</md-list-item>
 					<md-list-item>
 						<p>PPLNS window</p>
 						<p class="text-right">{{((network.difficulty*2 / poolStats.global.hashRate)) | convertedTime}}</p>
+						<div class="md-secondary-container"></div>
 					</md-list-item>
 					<md-list-item>
 						<p>Block maturity depth</p>
 						<p class="text-right">{{config.maturity_depth}}</p>
+						<div class="md-secondary-container"></div>
 					</md-list-item>
 					<md-list-item>
 						<p>Minimum denomination</p>
 						<p class="text-right">{{config.min_denom | toXMR}}</p>
+						<div class="md-secondary-container"></div>
 					</md-list-item>
 				</md-list>
 			</md-card-content>
